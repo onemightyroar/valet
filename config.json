@@ -1,0 +1,13 @@
+{
+    "platforms":[
+        {
+            "name": "amazon web services",
+            "trigger":{
+                "property":"MONIT_SERVICE",
+                "equals": "node_web_app"
+            },
+            "port":80
+        }
+    ],
+    "default_port":9200
+}

@@ -1,0 +1,45 @@
+{
+  "name": "valet",
+  "description": "Realtime node.js + socket.io server in a box.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/holmesal/blogpost",
+  "author": {
+    "name": "Alonso Holmes at One Mighty Roar",
+    "email": "alonso@onemightyroar.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onemightyroar/valet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onemightyroar/valet/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/onemightyroar/valet/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/valet",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "dependencies": {
+    "express.io":"1.1.x",
+    "winston":"0.7.x"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt": "~0.4.1"
+  },
+  "keywords": [],
+  "preferGlobal": true,
+  "bin":{
+      "valet": "start.js"
+  }
+}
