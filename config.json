@@ -4,7 +4,7 @@
             "name": "amazon web services",
             "trigger":{
                 "property":"MONIT_SERVICE",
-                "equals": "node_web_app"
+                "equals": "node_web_app_valet"
             },
             "port":80
         }
