@@ -1,7 +1,8 @@
 {
   "name": "valet",
+  "subdomain": "valet",
   "description": "Realtime node.js + socket.io server in a box.",
-  "version": "0.1.0",
+  "version": "0.1.0-1",
   "homepage": "https://github.com/holmesal/blogpost",
   "author": {
     "name": "Alonso Holmes at One Mighty Roar",
@@ -25,11 +26,12 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt nodeunit"
+    "test": "grunt nodeunit",
+    "start": "start.js"
   },
   "dependencies": {
-    "express.io":"1.1.x",
-    "winston":"0.7.x"
+    "express.io": "1.1.x",
+    "winston": "0.7.x"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.0",
@@ -39,7 +41,7 @@
   },
   "keywords": [],
   "preferGlobal": true,
-  "bin":{
-      "valet": "start.js"
+  "bin": {
+    "valet": "start.js"
   }
 }

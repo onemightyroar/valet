@@ -24,15 +24,40 @@ You can verify that Valet is running by visiting `http://localhost:9200` in your
 Deploying Valet to EC2
 ---
 
-* Open up opsworks and spin up a new "micro" instance.
-* Create a new app (type=node.js), and **name it "valet"**.
-* Point the app to the Valet github repository. No SSH key required.
-* Deploy your app. Valet will be pulled from github.
+Log into Amazon Web Services and open up Opsworks.
+
+Create a new stack.
+
+Spin up a new instance, with a **size of "micro"**
+
+Create a new app (type=node.js) with the following settings:
+
+    name: valet
+    app type: node.js
+    repository type: git
+    repository url: https://github.com/onemightyroar/valet.git
+
+Deploy your app. Valet will be pulled from github, and should be available in a few minutes.
 
 Deploying Valet to Nodejitsu
 ---
 
-Coming soon...
+Sign up for a free (30day) ndoejitsu account at [nodejitsu.com](http://www.nodejitsu.com)
+
+Install nodejitsu:
+
+    sudo npm install -g jitsu
+
+Pull down a local copy of Valet - this is the copy you'll be modifying and deploying.
+
+    cd /some/directory/
+    npm install valet
+
+Edit the `subdomain` field in package.json. Your app will be served from `your-subdomain.jit.su`
+
+Deploy your app:
+
+    jitsu deploy
 
 
 Namespaces
@@ -106,9 +131,6 @@ Here is an example client that listens for temperature readings. To demonstrate 
 	</head>
 	<body></body>
 	```
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 Faq
 ---

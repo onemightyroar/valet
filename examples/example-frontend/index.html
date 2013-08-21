@@ -2,12 +2,12 @@
 <head>
 
     <!-- Valet serves up socket.io.js on a special endpoint -->
-    <script src="http://localhost:9200/socket.io/socket.io.js"></script>
+    <script src="http://valet.jit.su/socket.io/socket.io.js"></script>
 
     <script type="text/javascript">
 
         // Connect on the "buildingTemp" namespace
-        var buildingTemp = io.connect('http://localhost:9200/buildings/123/temperature');
+        var buildingTemp = io.connect('http://valet.jit.su/buildings/123/temperature');
 
         // "Connect" events are fired when the connection happens successfully
         buildingTemp.on('connect',function(){

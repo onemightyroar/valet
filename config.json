@@ -1,6 +1,14 @@
 {
     "platforms":[
         {
+            "name": "production flag",
+            "trigger": {
+                "property":"NODE_ENV",
+                "equals":"production"
+            },
+            "port":80
+        }
+        {
             "name": "amazon web services",
             "trigger":{
                 "property":"MONIT_SERVICE",
