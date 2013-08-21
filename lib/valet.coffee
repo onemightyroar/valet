@@ -49,8 +49,8 @@ if deployment
   winston.info "#{deployment.name} deployment detected."
   port = deployment.port
 else
-  winston.info 'could not detect deployment. using default port.'
   port = config.default_port
+  winston.info "could not detect deployment. using default port: #{port}"
 
 
 

@@ -27,7 +27,7 @@
   },
   "scripts": {
     "test": "grunt nodeunit",
-    "start": "start.js"
+    "start": "server.js"
   },
   "dependencies": {
     "express.io": "1.1.x",
@@ -42,6 +42,6 @@
   "keywords": [],
   "preferGlobal": true,
   "bin": {
-    "valet": "start.js"
+    "valet": "server.js"
   }
 }
