@@ -2,7 +2,7 @@
   "name": "valet",
   "subdomain": "valet",
   "description": "Realtime node.js + socket.io server in a box.",
-  "version": "0.1.0-1",
+  "version": "0.1.1",
   "homepage": "https://github.com/holmesal/blogpost",
   "author": {
     "name": "Alonso Holmes at One Mighty Roar",
