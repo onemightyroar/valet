@@ -7,7 +7,7 @@
                 "equals":"production"
             },
             "port":80
-        }
+        },
         {
             "name": "amazon web services",
             "trigger":{
@@ -17,5 +17,5 @@
             "port":80
         }
     ],
-    "default_port":9200
+    "default_port":80
 }
