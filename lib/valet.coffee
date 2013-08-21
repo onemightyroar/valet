@@ -5,6 +5,10 @@ config = require '../config.json'
 emitter = require './node-emitter'
 utils = require './utils'
 
+# Which valet?
+winston.info '--------'
+winston.info "#{pjson.name} version #{pjson.version}"
+winston.info '--------'
 
 # Setup the express app
 app = express()
@@ -21,10 +25,10 @@ winston.remove winston.transports.Console
 winston.add winston.transports.Console,
   colorize: true
   timstamp: true
-winston.add winston.transports.File,
-  filename: 'winston.log'
-  json: false
-  colorize: true
+#winston.add winston.transports.File,
+#  filename: 'winston.log'
+#  json: false
+#  colorize: true
 
 # Set the port to use, based on the platform list in config.json
 found = false
@@ -90,8 +94,6 @@ app.io.route 'post', (req) ->
     winston.error "missing params. you sent:"
     winston.error req.data
 
-
-winston.info "#{pjson.name} version #{pjson.version}"
 winston.info "listening on port #{port}"
 
 # Start the app
