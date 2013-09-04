@@ -23,7 +23,20 @@ module.exports = (io, debug = false) ->
       # Check the input for errors
       req.namespace = req.path.substr(1,req.path.length)
 
-      winston.info req.namespace
+#      winston.info req.namespace
+#      winston.info req.body
+#      winston.info req.body.value
+
+      # Services that can't POST JSONs natively can POST a JSON in the "value" field
+      if req.body.value
+        try
+          toAdd = JSON.parse req.body.value
+          for key, value of toAdd
+            req.body[key] = value
+        catch error
+          winston.error "could not parse JSON :("
+          winston.error error
+
 
       if not req.namespace
         res.json 400,
