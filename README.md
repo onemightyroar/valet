@@ -87,6 +87,8 @@ You can pass data to Valet by either sending a POST request to your Valet server
 
 	curl -X POST -H "Content-Type: application/json" -d '{"event":"reading","data":{"temp":83.3826}}' http://localhost:9200/buildings/123/rooms/456/temperature
 
+*Note - if your client does not support sending an `application/json`, you can send the json as a string in the POST body called `value`*
+
 To send the same data using a socket is a two step process - first, you must connect to your Valet server **on the root namespace**. Then, emit an event called `post` containing the `event`, `namespace`, and `data` you would like to emit. For example:
 
 	temperature = io.connect('http://localhost:9200');
