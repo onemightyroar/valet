@@ -1,9 +1,16 @@
 express = require 'express.io'
 winston = require 'winston'
 pjson = require '../package.json'
-config = require '../config.json'
 emitter = require './node-emitter'
 utils = require './utils'
+
+# Check for a config file two levels up
+try
+  config = require '../../../config.json'
+  winston.info 'Found user-defined config file'
+catch
+  winston.info 'Could not find user-defined config file, using valet default config'
+  config = require '../config.json'
 
 # Which valet?
 winston.info '--------'
