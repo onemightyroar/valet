@@ -21,11 +21,18 @@ winston.info '--------'
 app = express()
 app.http().io()
 
+cors = (req, res, next) ->
+  res.header 'Access-Control-Allow-Origin', config.allowedDomains
+  res.header 'Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS'
+  res.header 'Access-Control-Allow-Headers', 'Content-Type'
+  next()
+
 # Use the express body parser (for JSONs)
 app.use express.bodyParser()
 # Use the emitter library
 app.configure ->
   app.use emitter(app.io,true)
+  app.use cors
 
 # Add the console transport to winston + file
 winston.remove winston.transports.Console
@@ -36,6 +43,7 @@ winston.add winston.transports.Console,
 #  filename: 'winston.log'
 #  json: false
 #  colorize: true
+
 
 # Set the port to use, based on the platform list in config.json
 found = false
