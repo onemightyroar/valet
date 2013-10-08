@@ -24,15 +24,16 @@ app.http().io()
 cors = (req, res, next) ->
   res.header 'Access-Control-Allow-Origin', '*'
   res.header 'Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS'
-  res.header 'Access-Control-Allow-Headers', 'Content-Type'
+  res.header 'Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With'
   next()
 
 # Use the express body parser (for JSONs)
 app.use express.bodyParser()
+
 # Use the emitter library
 app.configure ->
-  app.use emitter(app.io,true)
   app.use cors
+  app.use emitter(app.io,true)
 
 # Add the console transport to winston + file
 winston.remove winston.transports.Console
