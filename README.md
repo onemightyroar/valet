@@ -59,6 +59,11 @@ Deploy your app:
 
     jitsu deploy
 
+Config files
+---
+
+Valet will look for a file called `config.json` in your root project directory. If it can't find one, it will use the one located in the valet root. If you want to name your amazon app zomething other than valet, you should copy the included config.json file and tweak it as needed.
+
 
 Namespaces
 ---
