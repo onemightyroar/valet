@@ -54,7 +54,8 @@ module.exports = (io, debug = false) ->
         utils.emitter split.emit_to, split.socketspace, req.body.event, req.body.data, io
         # Call next handler
         next()
-
+    else if req.method is "OPTIONS"
+      res.send 200
     else
       winston.info "Method was #{req.method} -- ignoring"
       next()
